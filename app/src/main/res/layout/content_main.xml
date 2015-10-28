@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main" tools:context=".MainActivity"
+    android:background="@drawable/zorn">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MLG Horn"
+        android:id="@+id/mlg"
+        android:layout_marginLeft="81dp"
+        android:layout_marginStart="81dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/transparent"
+        android:textColor="@color/primary_text_default_material_dark"
+        android:textColorHighlight="@color/abc_primary_text_material_light"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WTF"
+        android:id="@+id/wtf"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/mlg"
+        android:layout_toEndOf="@+id/mlg"
+        android:background="@android:color/transparent"
+        android:textColor="@color/primary_text_default_material_dark"
+        android:textColorHighlight="@color/abc_primary_text_material_light"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bullshit"
+        android:id="@+id/bullshit"
+        android:layout_above="@+id/mlg"
+        android:layout_toLeftOf="@+id/wtf"
+        android:layout_toStartOf="@+id/wtf"
+        android:layout_marginBottom="52dp"
+        android:background="@android:color/transparent"
+        android:textColor="@color/primary_text_default_material_dark"
+        android:textColorHighlight="@color/abc_primary_text_material_light"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mööp"
+        android:id="@+id/moop"
+        android:layout_alignBottom="@+id/bullshit"
+        android:layout_alignRight="@+id/wtf"
+        android:layout_alignEnd="@+id/wtf"
+        android:background="@android:color/transparent"
+        android:textColor="@color/primary_text_default_material_dark"
+        android:textColorHighlight="@color/abc_primary_text_material_light"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Punch"
+        android:id="@+id/punch"
+        android:layout_below="@+id/mlg"
+        android:layout_toLeftOf="@+id/wtf"
+        android:layout_toStartOf="@+id/wtf"
+        android:layout_marginTop="55dp"
+        android:background="@android:color/transparent"
+        android:textColor="@color/primary_text_default_material_dark"
+        android:textColorHighlight="@color/abc_primary_text_material_light"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jaaa"
+        android:id="@+id/jaaa"
+        android:layout_alignTop="@+id/punch"
+        android:layout_alignRight="@+id/wtf"
+        android:layout_alignEnd="@+id/wtf"
+        android:background="@android:color/transparent"
+        android:textColor="@color/primary_text_default_material_dark"
+        android:textColorHighlight="@color/abc_primary_text_material_light"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+</RelativeLayout>
