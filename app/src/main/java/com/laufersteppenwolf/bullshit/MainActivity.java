@@ -1,7 +1,11 @@
 package com.laufersteppenwolf.bullshit;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +21,11 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     public static final String LOG_TAG = "Bullshit";
+    public static final String VERSION = "version";
+
+    private static Context context;
+    public static SharedPreferences myPreferences;
+    public static SharedPreferences.Editor editor;
 
     private MediaPlayer mpBullshit;
     private MediaPlayer mpMoop;
@@ -32,6 +41,17 @@ public class MainActivity extends AppCompatActivity {
             mp.stop();
         }
         Log.d(LOG_TAG, "All MediaPlayers stopped");
+    }
+
+    public static void setPreferences(String key, String value) {
+        editor.putString(key, value);
+        editor.apply();
+    }
+
+    public static void initPreferences(){
+        myPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        editor = myPreferences.edit();
+        setPreferences(VERSION, BuildConfig.VERSION_NAME); // Update the build version for About settings
     }
 
     private void init() {
@@ -54,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        context = this;
+
         final Button bullshit = (Button) findViewById(R.id.bullshit);
         final Button moop = (Button) findViewById(R.id.moop);
         final Button mlg = (Button) findViewById(R.id.mlg);
@@ -61,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
         final Button punch = (Button) findViewById(R.id.punch);
         final Button jaaa = (Button) findViewById(R.id.jaaa);
 
+        initPreferences();
         init();
 
 
@@ -113,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                mpWtf.seekTo(700);
                 mpWtf.start();
             }
         });
@@ -180,6 +204,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            final Intent settings = new Intent(this, SettingsActivity.class);
+            startActivity(settings);
             return true;
         }
 

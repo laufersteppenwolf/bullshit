@@ -1,0 +1,30 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/pref_header_about">
+
+        <Preference
+            android:key="version"
+            android:title="@string/version"
+            android:summary="@string/unknown"
+            android:icon="@mipmap/ic_launcher"/>
+
+        <Preference
+            android:key="copyright"
+            android:title="@string/author"
+            android:summary="@string/author_text"
+            android:icon="@drawable/profile_pic">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="http://forum.xda-developers.com/member.php?u=4716493" />
+        </Preference>
+
+        <Preference
+            android:key="github"
+            android:title="@string/github"
+            android:icon="@drawable/octocat">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://github.com/laufersteppenwolf/Bullshit" />
+        </Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>
